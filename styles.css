@@ -1,0 +1,71 @@
+:root {
+    --text: #e6e1ea;
+    --background: #0d0117;
+    --primary: #c1b3ca;
+    --secondary: #5b3f3f;
+    --accent: #a99883;
+    font-size: 20px;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Verdana", monospace;
+    background-color: var(--background);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    color: var(--text);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    align-items: center;
+}
+
+.container > h1 {
+    margin-top: 100px;
+    font-size: 1.75rem;
+}
+
+.box { 
+    margin-top: 20px;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.palindrome-checker {
+    width: min(350px, 100vw);
+    background-color: var(--secondary);
+}
+
+.text-input {
+    text-align: center;
+    height: 30px;
+    margin: 10px;
+    width: 200px;
+    border: none;
+    background-color: var(--text);
+}
+
+.check-button {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.palindrome-definition {
+    width: min(500px, 100vw);
+    background-color: var(--accent);
+}
