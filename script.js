@@ -10,7 +10,7 @@ const checkIfPalindrome = (input) => {
     const originalInput = input;
     
     // clean string
-    const regex = /[.,:\i\s]/gi;
+    const regex = /[.,:_-\W\s]/gi;
     const cleanInput = input.replace(regex, "").toLowerCase();
     
     // throw error if no input
@@ -23,11 +23,12 @@ const checkIfPalindrome = (input) => {
     result.replaceChildren();
     
     // check if input is palindrome
-    let resultMessage = `<strong>${originalInput}</strong> ${cleanInput === [...cleanInput].reverse.join('') ? "is" : "is not"} a palindrome.`;
+    let resultMessage = `<strong>${originalInput}</strong> ${cleanInput === [...cleanInput].reverse().join('') ? "is" : "is not"} a palindrome`;
     // spread to reverse it more easily
+    console.log(cleanInput);
     
     // display message in result div
-    let resultParagraph = document.createElement("p");
+    let resultParagraph = document.createElement('p');
     resultParagraph.className = "output";
     resultParagraph.innerHTML = resultMessage;
     result.appendChild(resultParagraph);
@@ -35,7 +36,7 @@ const checkIfPalindrome = (input) => {
     result.classList.remove("hidden");
 };
 
-checkButton.addEventListener("click", () => {
+checkButton.addEventListener('click', () => {
     checkIfPalindrome(textInput.value);
     textInput.value = "";
 });
